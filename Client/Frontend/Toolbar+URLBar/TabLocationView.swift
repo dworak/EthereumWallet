@@ -11,6 +11,7 @@ protocol TabLocationViewDelegate: AnyObject {
     func tabLocationViewDidLongPressLocation(_ tabLocationView: TabLocationView)
     func tabLocationViewDidTapReaderMode(_ tabLocationView: TabLocationView)
     func tabLocationViewDidTapReload(_ tabLocationView: TabLocationView)
+    func tabLocationViewDidTapSummerize(_ tabLocationView: TabLocationView)
     func tabLocationViewDidTapShield(_ tabLocationView: TabLocationView)
     func tabLocationViewDidBeginDragInteraction(_ tabLocationView: TabLocationView)
     func tabLocationViewDidTapShare(_ tabLocationView: TabLocationView, button: UIButton)
@@ -167,6 +168,22 @@ class TabLocationView: UIView, FeatureFlaggable {
         reloadButton.largeContentTitle = .TabLocationReloadAccessibilityLabel
         return reloadButton
     }()
+    
+    lazy var summarizeButton = {
+        $0.addTarget(self, action: #selector(tapSummerizeButton), for: .touchUpInside)
+        $0.addGestureRecognizer(
+            UILongPressGestureRecognizer(target: self, action: #selector(longPressReloadButton)))
+        $0.imageView?.contentMode = .scaleAspectFit
+        $0.setImage(UIImage(named: "nav-summarize"), for: .normal)
+        $0.contentHorizontalAlignment = .center
+        $0.accessibilityLabel = .TabLocationReloadAccessibilityLabel
+        $0.accessibilityIdentifier = AccessibilityIdentifiers.Toolbar.reloadButton
+        $0.isAccessibilityElement = true
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.showsLargeContentViewer = true
+        $0.largeContentTitle = .TabLocationReloadAccessibilityLabel
+        return $0
+    }(UIButton())
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -184,7 +201,7 @@ class TabLocationView: UIView, FeatureFlaggable {
         let space1px = UIView.build()
         space1px.widthAnchor.constraint(equalToConstant: 1).isActive = true
 
-        let subviews = [trackingProtectionButton, space1px, urlTextField, shoppingButton, readerModeButton, shareButton, reloadButton]
+        let subviews = [trackingProtectionButton, space1px, urlTextField, shoppingButton, readerModeButton, shareButton, summarizeButton, reloadButton]
         contentView = UIStackView(arrangedSubviews: subviews)
         contentView.distribution = .fill
         contentView.alignment = .center
@@ -203,6 +220,8 @@ class TabLocationView: UIView, FeatureFlaggable {
             shareButton.widthAnchor.constraint(equalToConstant: UX.buttonSize),
             reloadButton.widthAnchor.constraint(equalToConstant: UX.buttonSize),
             reloadButton.heightAnchor.constraint(equalToConstant: UX.buttonSize),
+            summarizeButton.widthAnchor.constraint(equalToConstant: UX.buttonSize),
+            summarizeButton.heightAnchor.constraint(equalToConstant: UX.buttonSize),
         ])
 
         // Setup UIDragInteraction to handle dragging the location
@@ -248,6 +267,11 @@ class TabLocationView: UIView, FeatureFlaggable {
     @objc
     func tapReloadButton() {
         delegate?.tabLocationViewDidTapReload(self)
+    }
+    
+    @objc
+    func tapSummerizeButton() {
+        delegate?.tabLocationViewDidTapSummerize(self)
     }
 
     @objc

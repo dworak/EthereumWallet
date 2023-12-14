@@ -891,6 +891,8 @@
 		96EB6C4027DBEE9800A9D159 /* SearchGroupedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB6C3F27DBEE9800A9D159 /* SearchGroupedItemsViewController.swift */; };
 		96EB6C4327DC205D00A9D159 /* SearchGroupedItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB6C4227DC205D00A9D159 /* SearchGroupedItemsViewModel.swift */; };
 		96F8DA49280452CA00E53239 /* GleanPlumbContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DA48280452CA00E53239 /* GleanPlumbContextProvider.swift */; };
+		A02B52612B2B38DC00DC03FE /* Summarizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B52582B2B38DA00DC03FE /* Summarizer.swift */; };
+		A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */; };
 		A83E5B1A1C1DA8BF0026D912 /* image.gif in Resources */ = {isa = PBXBuildFile; fileRef = A83E5B181C1DA8BF0026D912 /* image.gif */; };
 		A83E5B1B1C1DA8BF0026D912 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = A83E5B191C1DA8BF0026D912 /* image.png */; };
 		A83E5B1D1C1DA8D80026D912 /* UIPasteboardExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5B1C1C1DA8D80026D912 /* UIPasteboardExtensionsTests.swift */; };
@@ -5699,9 +5701,11 @@
 		9F974E3DAFCB46BF67A807D0 /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Search.strings; sourceTree = "<group>"; };
 		9FA740EF995B25873421D001 /* gl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gl; path = gl.lproj/AuthenticationManager.strings; sourceTree = "<group>"; };
 		A00D4D7599E56079EE99A4C9 /* eu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = eu; path = eu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A02B52582B2B38DA00DC03FE /* Summarizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summarizer.swift; sourceTree = "<group>"; };
 		A0584C2091A7B47A062CD7ED /* kab */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kab; path = kab.lproj/Intro.strings; sourceTree = "<group>"; };
 		A0CE43FF808F6F9D400D83DC /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0D54D9CB6789C6AFAE2A2A8 /* mr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mr; path = mr.lproj/Shared.strings; sourceTree = "<group>"; };
+		A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		A10C4D5D83D0EA96BDF7AFEA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intro.strings; sourceTree = "<group>"; };
 		A1954F19B51CDBB33FB4FBB9 /* ml */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ml; path = ml.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A1A140059C225473C3FA403D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ErrorPages.strings; sourceTree = "<group>"; };
@@ -8163,6 +8167,7 @@
 		39EF434C260A736D0011E22E /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
+				A02B52562B2B38B500DC03FE /* Summary */,
 				9636D92627F5D71A00771F5E /* Messaging */,
 				39EF434D260A73950011E22E /* Experiments.swift */,
 				3964F5FB2656D2B500065278 /* initial_experiments.json */,
@@ -9413,6 +9418,15 @@
 				96EB6C4227DC205D00A9D159 /* SearchGroupedItemsViewModel.swift */,
 			);
 			path = GeneralizedTableView;
+			sourceTree = "<group>";
+		};
+		A02B52562B2B38B500DC03FE /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				A02B52582B2B38DA00DC03FE /* Summarizer.swift */,
+				A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 		ABEF80CD2A24BEF1003F52C4 /* CreditCardBottomSheet */ = {
@@ -13022,6 +13036,7 @@
 				8A93F86229D36F0F004159D9 /* NavigationController.swift in Sources */,
 				E13F8C342928194800BDC8B4 /* PhotonActionSheetSiteHeaderView.swift in Sources */,
 				C2D71B9B2A3850B4003DEC7A /* ThemedTableViewCellViewModel.swift in Sources */,
+				A02B52612B2B38DC00DC03FE /* Summarizer.swift in Sources */,
 				C869912F28917688007ACC5C /* WallpaperMetadataLoader.swift in Sources */,
 				2137785D297F1F2800D01309 /* DownloadedFile.swift in Sources */,
 				745DAB301CDAAFAA00D44181 /* RecentlyClosedTabsPanel.swift in Sources */,
@@ -13055,6 +13070,7 @@
 				1DA710072AE7106B00677F6B /* AppDataUsageReportSetting.swift in Sources */,
 				D3BE7B461B054F8600641031 /* UITestAppDelegate.swift in Sources */,
 				C8DC90C72A06759E0008832B /* MarkupAttributionUtility.swift in Sources */,
+				A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */,
 				219A0FD52ACC8506009A6D1A /* InactiveTabsCell.swift in Sources */,
 				23D57E6E25ED6F2700883FAD /* SearchViewController.swift in Sources */,
 				C82A94F2269F68ED00624AA7 /* LegacyFeatureFlagsManager.swift in Sources */,

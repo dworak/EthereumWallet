@@ -164,6 +164,23 @@ extension BrowserViewController: URLBarDelegate {
             },
             overlayState: overlayManager)
     }
+    
+    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: UIButton) {
+        guard let tab = tabManager.selectedTab, let webView = tab.webView else { return }
+        
+        Summarizer.getContent(from: webView) { [weak self] text in
+            if let text = text {
+                Summarizer.summarize(text: text) { response in
+                    let summaryVC = BottomSheetViewController(
+                        viewModel: .init(
+                            closeButtonA11yLabel: String.TabTrayCloseAccessibilityCustomAction
+                        ), childViewController: SummaryViewController(viewModel: .init(text: response))
+                    )
+                    self?.present(summaryVC, animated: true)
+                }
+            }
+        }
+    }
 
     func urlBarDidPressQRButton(_ urlBar: URLBarView) {
         if CoordinatorFlagManager.isQRCodeCoordinatorEnabled {

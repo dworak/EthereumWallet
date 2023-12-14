@@ -11,8 +11,8 @@ extension WKWebView {
     ///  - If below iOS14, evaluates Javascript without sandboxed environment
     /// - Parameters:
     ///     - javascript: String representing javascript to be evaluated
-    public func evaluateJavascriptInDefaultContentWorld(_ javascript: String) {
-        self.evaluateJavaScript(javascript, in: nil, in: .defaultClient, completionHandler: { _ in })
+    public func evaluateJavascriptInDefaultContentWorld(_ javascript: String, completion: ((Result<Any, Error>) -> Void)? = nil) {
+        self.evaluateJavaScript(javascript, in: nil, in: .defaultClient, completionHandler: completion)
     }
 
     /// This calls different WebKit evaluateJavaScript functions depending on iOS version with a completion that passes a tuple with optional data or an optional error

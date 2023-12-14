@@ -30,6 +30,7 @@ protocol URLBarDelegate: AnyObject {
     /// - returns: whether the long-press was handled by the delegate; i.e. return `false` when the conditions for even starting handling long-press were not satisfied
     func urlBarDidLongPressReaderMode(_ urlBar: URLBarView) -> Bool
     func urlBarDidLongPressReload(_ urlBar: URLBarView, from button: UIButton)
+    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: UIButton)
     func urlBarDidPressStop(_ urlBar: URLBarView)
     func urlBarDidPressReload(_ urlBar: URLBarView)
     func urlBarDidEnterOverlayMode(_ urlBar: URLBarView)
@@ -730,6 +731,10 @@ extension URLBarView: TabLocationViewDelegate {
 
     func tabLocationViewDidLongPressReload(_ tabLocationView: TabLocationView) {
         delegate?.urlBarDidLongPressReload(self, from: tabLocationView.reloadButton)
+    }
+    
+    func tabLocationViewDidTapSummerize(_ tabLocationView: TabLocationView) {
+        delegate?.urlBarDidTapSummerize(self, from: tabLocationView.summarizeButton)
     }
 
     func tabLocationViewDidTapLocation(_ tabLocationView: TabLocationView) {
