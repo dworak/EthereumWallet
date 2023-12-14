@@ -125,7 +125,10 @@ internal class Summarizer {
         
         do {
             let attributedString = try NSAttributedString(data: data, options: options, documentAttributes: nil)
-            return attributedString.string.trimmed()
+            return attributedString.string
+                .trimmed()
+                .replacingOccurrences(of: "\n", with: " ")
+                .replacingOccurrences(of: "\t", with: " ")
         } catch {
             print("Error converting HTML to plain text: \(error)")
             return nil
