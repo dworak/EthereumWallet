@@ -30,7 +30,7 @@ protocol URLBarDelegate: AnyObject {
     /// - returns: whether the long-press was handled by the delegate; i.e. return `false` when the conditions for even starting handling long-press were not satisfied
     func urlBarDidLongPressReaderMode(_ urlBar: URLBarView) -> Bool
     func urlBarDidLongPressReload(_ urlBar: URLBarView, from button: UIButton)
-    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: UIButton)
+    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: LoadingButton)
     func urlBarDidPressStop(_ urlBar: URLBarView)
     func urlBarDidPressReload(_ urlBar: URLBarView)
     func urlBarDidEnterOverlayMode(_ urlBar: URLBarView)

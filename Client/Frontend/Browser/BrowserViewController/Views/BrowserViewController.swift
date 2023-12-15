@@ -65,6 +65,7 @@ class BrowserViewController: UIViewController,
     var toolbarContextHintVC: ContextualHintViewController
     let shoppingContextHintVC: ContextualHintViewController
     private var backgroundTabLoader: DefaultBackgroundTabLoader
+    var summaryViewController: SummaryViewController?
 
     // popover rotation handling
     var displayedPopoverController: UIViewController?

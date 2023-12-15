@@ -183,7 +183,7 @@ class TabLocationView: UIView, FeatureFlaggable {
         $0.showsLargeContentViewer = true
         $0.largeContentTitle = .TabLocationReloadAccessibilityLabel
         return $0
-    }(UIButton())
+    }(LoadingButton())
 
     override init(frame: CGRect) {
         super.init(frame: frame)

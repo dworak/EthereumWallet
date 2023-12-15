@@ -10,6 +10,11 @@ final class SummaryViewController: UIViewController {
         let text: String
     }
     
+    var text: String? {
+        set { textView.text = newValue }
+        get { textView.text }
+    }
+    
     init(viewModel: ViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.textView.text = viewModel.text
@@ -33,7 +38,7 @@ final class SummaryViewController: UIViewController {
         view.addSubview(textView)
         
         NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            textView.topAnchor.constraint(equalTo: view.topAnchor, constant: 64),
             textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),

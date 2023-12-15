@@ -165,19 +165,37 @@ extension BrowserViewController: URLBarDelegate {
             overlayState: overlayManager)
     }
     
-    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: UIButton) {
+    func urlBarDidTapSummerize(_ urlBar: URLBarView, from button: LoadingButton) {
         guard let tab = tabManager.selectedTab, let webView = tab.webView else { return }
+       
+        summaryViewController = nil
+        button.showLoading()
         
-        Summarizer.getContent(from: webView) { [weak self] text in
-            if let text = text {
-                Summarizer.summarize(text: text) { response in
-                    let summaryVC = BottomSheetViewController(
-                        viewModel: .init(
-                            closeButtonA11yLabel: String.TabTrayCloseAccessibilityCustomAction
-                        ), childViewController: SummaryViewController(viewModel: .init(text: response))
-                    )
-                    self?.present(summaryVC, animated: true)
+        Summarizer.getContent(from: webView) { [weak self, weak button] text in
+            guard let self = self, let text = text else { return }
+            self.presentSummaryViewController(with: text)
+            button?.hideLoading()
+        }
+    }
+    
+    func presentSummaryViewController(with text: String) {
+        Summarizer.summarizeWithStream(text: text) { [weak self] response in
+            guard let self = self else { return }
+            guard self.summaryViewController == nil else {
+                DispatchQueue.main.sync {
+                    self.summaryViewController?.text = response
                 }
+                return
+            }
+            
+            DispatchQueue.main.sync {
+                let summaryChildViewController = SummaryViewController(viewModel: .init(text: response))
+                self.summaryViewController = summaryChildViewController
+                let summaryVC = BottomSheetViewController(
+                    viewModel: .init(closeButtonA11yLabel: String.TabTrayCloseAccessibilityCustomAction),
+                    childViewController: summaryChildViewController
+                )
+                self.present(summaryVC, animated: true)
             }
         }
     }

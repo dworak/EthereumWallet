@@ -893,6 +893,10 @@
 		96F8DA49280452CA00E53239 /* GleanPlumbContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DA48280452CA00E53239 /* GleanPlumbContextProvider.swift */; };
 		A02B52612B2B38DC00DC03FE /* Summarizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B52582B2B38DA00DC03FE /* Summarizer.swift */; };
 		A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */; };
+		A0DAB7622B2BD2B4003AC439 /* GPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7612B2BD2B4003AC439 /* GPTAPI.swift */; };
+		A0DAB7642B2BD2E1003AC439 /* GPTAPI+Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7632B2BD2E1003AC439 /* GPTAPI+Models.swift */; };
+		A0DAB7662B2BD3AA003AC439 /* Summarizer+NLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7652B2BD3AA003AC439 /* Summarizer+NLP.swift */; };
+		A0DAB7682B2BD4DF003AC439 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7672B2BD4DF003AC439 /* LoadingButton.swift */; };
 		A83E5B1A1C1DA8BF0026D912 /* image.gif in Resources */ = {isa = PBXBuildFile; fileRef = A83E5B181C1DA8BF0026D912 /* image.gif */; };
 		A83E5B1B1C1DA8BF0026D912 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = A83E5B191C1DA8BF0026D912 /* image.png */; };
 		A83E5B1D1C1DA8D80026D912 /* UIPasteboardExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5B1C1C1DA8D80026D912 /* UIPasteboardExtensionsTests.swift */; };
@@ -5706,6 +5710,10 @@
 		A0CE43FF808F6F9D400D83DC /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0D54D9CB6789C6AFAE2A2A8 /* mr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = mr; path = mr.lproj/Shared.strings; sourceTree = "<group>"; };
 		A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		A0DAB7612B2BD2B4003AC439 /* GPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTAPI.swift; sourceTree = "<group>"; };
+		A0DAB7632B2BD2E1003AC439 /* GPTAPI+Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GPTAPI+Models.swift"; sourceTree = "<group>"; };
+		A0DAB7652B2BD3AA003AC439 /* Summarizer+NLP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Summarizer+NLP.swift"; sourceTree = "<group>"; };
+		A0DAB7672B2BD4DF003AC439 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		A10C4D5D83D0EA96BDF7AFEA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Intro.strings; sourceTree = "<group>"; };
 		A1954F19B51CDBB33FB4FBB9 /* ml */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ml; path = ml.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A1A140059C225473C3FA403D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ErrorPages.strings; sourceTree = "<group>"; };
@@ -9072,6 +9080,7 @@
 				8AD40FD427BB1C1000672675 /* LockButton.swift */,
 				8AD40FC827BADC4B00672675 /* ReaderModeButton.swift */,
 				8AD40FC927BADC4B00672675 /* StatefulButton.swift */,
+				A0DAB7672B2BD4DF003AC439 /* LoadingButton.swift */,
 				43DB9783292D6846002E0B9F /* ShareButton.swift */,
 				E4CD9F2C1A6DC91200318571 /* TabLocationView.swift */,
 				8AD40FCC27BADC5B00672675 /* TabLocationContainerView.swift */,
@@ -9424,9 +9433,20 @@
 			isa = PBXGroup;
 			children = (
 				A02B52582B2B38DA00DC03FE /* Summarizer.swift */,
+				A0DAB7652B2BD3AA003AC439 /* Summarizer+NLP.swift */,
 				A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */,
+				A0DAB7602B2BD2A3003AC439 /* GPT */,
 			);
 			path = Summary;
+			sourceTree = "<group>";
+		};
+		A0DAB7602B2BD2A3003AC439 /* GPT */ = {
+			isa = PBXGroup;
+			children = (
+				A0DAB7612B2BD2B4003AC439 /* GPTAPI.swift */,
+				A0DAB7632B2BD2E1003AC439 /* GPTAPI+Models.swift */,
+			);
+			path = GPT;
 			sourceTree = "<group>";
 		};
 		ABEF80CD2A24BEF1003F52C4 /* CreditCardBottomSheet */ = {
@@ -13073,6 +13093,7 @@
 				A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */,
 				219A0FD52ACC8506009A6D1A /* InactiveTabsCell.swift in Sources */,
 				23D57E6E25ED6F2700883FAD /* SearchViewController.swift in Sources */,
+				A0DAB7662B2BD3AA003AC439 /* Summarizer+NLP.swift in Sources */,
 				C82A94F2269F68ED00624AA7 /* LegacyFeatureFlagsManager.swift in Sources */,
 				C8610DAA2A0EBF7100B79FF1 /* OnboardingCardDelegate.swift in Sources */,
 				3BB50E111D6274CD004B33DF /* TopSiteItemCell.swift in Sources */,
@@ -13114,6 +13135,7 @@
 				E16AD22C2A8A7AE800F0AA58 /* FakespotHighlightsCardView.swift in Sources */,
 				B2999FF12B194A5800F0FEC1 /* CreditCardPayload.swift in Sources */,
 				E1877A81286E0EFD00F5BDF2 /* WebViewNavigationHandler.swift in Sources */,
+				A0DAB7642B2BD2E1003AC439 /* GPTAPI+Models.swift in Sources */,
 				274A36CC239EB99400A21587 /* LibraryPanelContextMenu.swift in Sources */,
 				D314E7F71A37B98700426A76 /* TabToolbar.swift in Sources */,
 				43D00493296FC48F00CB0F31 /* CreditCardSettingsEmptyView.swift in Sources */,
@@ -13177,6 +13199,7 @@
 				8A0D32842A61E1CC007D976D /* StatusBarOverlay.swift in Sources */,
 				8A5D1CA42A30D69A005AD35C /* SearchSetting.swift in Sources */,
 				74BBDF472A17979000D3BEFE /* OnboardingDefaultBrowserModelProtocol.swift in Sources */,
+				A0DAB7682B2BD4DF003AC439 /* LoadingButton.swift in Sources */,
 				8AD40FC727BADC3400672675 /* ToolbarTextField.swift in Sources */,
 				8A720C5E2A4C85DA0003018A /* AccountSettingsDelegate.swift in Sources */,
 				CA90753824929B22005B794D /* NoLoginsView.swift in Sources */,
@@ -13372,6 +13395,7 @@
 				EBC486992195F46B00CDA48D /* InternalSchemeHandler.swift in Sources */,
 				E18BAAFD28E4A44500098AE2 /* TopTabFader.swift in Sources */,
 				C8656D79270F866700E199EA /* CustomizeHomepageSectionCell.swift in Sources */,
+				A0DAB7622B2BD2B4003AC439 /* GPTAPI.swift in Sources */,
 				ABE4393E2AC432040074FFE1 /* PartnerWebsites.swift in Sources */,
 				C84655FB28879FC600861B4A /* WallpaperStorageUtility.swift in Sources */,
 				8A13FA8B2AD82E6D007527AB /* ApplicationStateProvider.swift in Sources */,
