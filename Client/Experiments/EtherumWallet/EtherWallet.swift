@@ -15,6 +15,7 @@ public class EtherWallet {
     public static let history: HistoryService = EtherWallet.shared
     public static let util: UtilService = EtherWallet.shared
     public static let etherScanAPI = EtherScanAPI.shared
+    public static let etherPriceApi = CoinGecoAPI.shared
     
 //    private let web3Main = Web3.InfuraMainnetWeb3()
     let keystoreDirectoryName = "/keystore"

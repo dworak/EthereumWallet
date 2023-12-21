@@ -42,7 +42,7 @@ extension EtherWallet: BalanceService {
         guard let contract = try await Web3.InfuraMainnetWeb3().contract(Web3.Utils.erc20ABI, at: contractEthreumAddress) else { throw
             WalletError.invalidAddress
         }
-        guard let address = address else { throw WalletError.accountDoesNotExist }
+//        guard let address = address else { throw WalletError.accountDoesNotExist }
         
         let balance = try await contract.web3.eth.getBalance(for: contractEthreumAddress!)
         

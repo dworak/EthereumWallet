@@ -925,6 +925,9 @@
 		A00FD9422B33968F003DAC21 /* Karla-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9342B33968E003DAC21 /* Karla-SemiBoldItalic.ttf */; };
 		A00FD9432B33968F003DAC21 /* Karla-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9352B33968E003DAC21 /* Karla-LightItalic.ttf */; };
 		A00FD9442B33968F003DAC21 /* Karla-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9362B33968F003DAC21 /* Karla-MediumItalic.ttf */; };
+		A00FD9462B348286003DAC21 /* CoinGecoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9452B348286003DAC21 /* CoinGecoAPI.swift */; };
+		A00FD9482B348301003DAC21 /* CoinGecoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9472B348301003DAC21 /* CoinGecoModel.swift */; };
+		A00FD94A2B3490C1003DAC21 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9492B3490C1003DAC21 /* SendView.swift */; };
 		A02B52612B2B38DC00DC03FE /* Summarizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B52582B2B38DA00DC03FE /* Summarizer.swift */; };
 		A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */; };
 		A0DAB7622B2BD2B4003AC439 /* GPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7612B2BD2B4003AC439 /* GPTAPI.swift */; };
@@ -5771,6 +5774,9 @@
 		A00FD9342B33968E003DAC21 /* Karla-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		A00FD9352B33968E003DAC21 /* Karla-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-LightItalic.ttf"; sourceTree = "<group>"; };
 		A00FD9362B33968F003DAC21 /* Karla-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A00FD9452B348286003DAC21 /* CoinGecoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGecoAPI.swift; sourceTree = "<group>"; };
+		A00FD9472B348301003DAC21 /* CoinGecoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGecoModel.swift; sourceTree = "<group>"; };
+		A00FD9492B3490C1003DAC21 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		A02B52582B2B38DA00DC03FE /* Summarizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summarizer.swift; sourceTree = "<group>"; };
 		A0584C2091A7B47A062CD7ED /* kab */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kab; path = kab.lproj/Intro.strings; sourceTree = "<group>"; };
 		A0CE43FF808F6F9D400D83DC /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -9534,6 +9540,7 @@
 			children = (
 				A00FD9182B3366B5003DAC21 /* Model */,
 				A00FD9162B3366A6003DAC21 /* EtherScanAPI.swift */,
+				A00FD9452B348286003DAC21 /* CoinGecoAPI.swift */,
 			);
 			path = EtherScan;
 			sourceTree = "<group>";
@@ -9542,6 +9549,7 @@
 			isa = PBXGroup;
 			children = (
 				A00FD9192B3366CA003DAC21 /* EtherScanModel.swift */,
+				A00FD9472B348301003DAC21 /* CoinGecoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -9550,6 +9558,7 @@
 			isa = PBXGroup;
 			children = (
 				A00FD91C2B336FC4003DAC21 /* WalletView.swift */,
+				A00FD9492B3490C1003DAC21 /* SendView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -13529,6 +13538,7 @@
 				8A57519927AD80B800A84DBF /* ReaderModeStyleViewModel.swift in Sources */,
 				435D7CC5246209AA0043ACB9 /* IntroViewController.swift in Sources */,
 				A00FD9272B33967A003DAC21 /* Assets.swift in Sources */,
+				A00FD9462B348286003DAC21 /* CoinGecoAPI.swift in Sources */,
 				C855728429AEA3C300AF32B0 /* SurveySurfaceViewModel.swift in Sources */,
 				CA4ACE4924C8C91600F55894 /* BreachAlertsDetailView.swift in Sources */,
 				C834ACD128D3ACA900203AD1 /* Blurrable.swift in Sources */,
@@ -13687,6 +13697,7 @@
 				1D8487B42AD0C6C100F7527C /* RemoteTabsPanelMiddleware.swift in Sources */,
 				C849E46526B9C3DD00260F0B /* SlideoverPresentationController.swift in Sources */,
 				E18F44072A951C330056160F /* FakespotHighlightGroup.swift in Sources */,
+				A00FD94A2B3490C1003DAC21 /* SendView.swift in Sources */,
 				D5D0532E2645B3A700759F85 /* ExperimentsTableView.swift in Sources */,
 				8A832A9029DC96C50025D5DD /* LaunchScreenView.swift in Sources */,
 				214EF4152AC5D5D0005BCCDA /* TabDisplayView.swift in Sources */,
@@ -13816,6 +13827,7 @@
 				E1380B8D2AEA897C00630AFA /* SidebarEnabledView.swift in Sources */,
 				D0625C98208E87F10081F3B2 /* DownloadQueue.swift in Sources */,
 				9636D92E27F9E5D900771F5E /* GleanPlumbMessage.swift in Sources */,
+				A00FD9482B348301003DAC21 /* CoinGecoModel.swift in Sources */,
 				8D8251811F4DE67F00780643 /* AdvancedAccountSettingViewController.swift in Sources */,
 				966E4B2629F2D4AC00299B8D /* AccessoryViewProvider.swift in Sources */,
 				ABEF80D52A254185003F52C4 /* CreditCardBottomSheetFooterView.swift in Sources */,

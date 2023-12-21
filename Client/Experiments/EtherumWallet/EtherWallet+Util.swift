@@ -6,7 +6,7 @@ import web3swift
 import Web3Core
 
 public protocol UtilService {
-    func createWallet() throws -> WalletInfo?
+    func createWallet(password: String) throws -> WalletInfo?
     func importWallet(with mnemonic: String) throws -> WalletInfo?
 }
 
@@ -21,7 +21,7 @@ public struct WalletInfo {
 }
 
 extension EtherWallet: UtilService {
-    public func createWallet() throws -> WalletInfo? {
+    public func createWallet(password: String = "") throws -> WalletInfo? {
         let userDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let web3KeystoreManager = KeystoreManager.managerForPath(userDir + "/keystore")
         
@@ -35,14 +35,16 @@ extension EtherWallet: UtilService {
         }
         
         guard
-            let tempWalletAddress = try BIP32Keystore(mnemonics: tMnemonics, password: "", prefixPath: "m/44'/77777'/0'/0"),
+            let tempWalletAddress = try BIP32Keystore(mnemonics: tMnemonics, password: password, prefixPath: "m/44'/77777'/0'/0"),
             let walletAddress = tempWalletAddress.addresses?.first
         else {
             throw "Unable to create wallet"
         }
         
         let address = walletAddress.address
-        let privateKey = try tempWalletAddress.UNSAFE_getPrivateKeyData(password: "", account: walletAddress)
+        let privateKey = try tempWalletAddress.UNSAFE_getPrivateKeyData(password: password, account: walletAddress)
+        
+        try EtherWallet.account.importAccount(privateKey: privateKey.toHexString(), password: password)
 
         let keyData = try JSONEncoder().encode(tempWalletAddress.keystoreParams)
         FileManager.default.createFile(atPath: userDir + "/keystore" + "/key.json", contents: keyData, attributes: nil)
@@ -50,8 +52,8 @@ extension EtherWallet: UtilService {
         return WalletInfo(address: address, mnemonics: tMnemonics, privateKey: privateKey)
     }
     
-    public func importWallet(with mnemonic: String) throws -> WalletInfo? {
-        let keystore = try BIP32Keystore(mnemonics: mnemonic, password: "", mnemonicsPassword: "")
+    public func importWallet(with mnemonics: String) throws -> WalletInfo? {
+        let keystore = try BIP32Keystore(mnemonics: mnemonics, password: "", mnemonicsPassword: "")
         guard let myWeb3KeyStore = keystore else {
             return nil
         }
@@ -64,6 +66,8 @@ extension EtherWallet: UtilService {
         
         let privateKey = try manager.UNSAFE_getPrivateKeyData(password: "", account: walletAddress)
         
-        return WalletInfo(address: walletAddress.address, mnemonics: mnemonic, privateKey: privateKey)
+        try EtherWallet.account.importAccount(mnemonics: mnemonics, password: "")
+        
+        return WalletInfo(address: walletAddress.address, mnemonics: mnemonics, privateKey: privateKey)
     }
 }

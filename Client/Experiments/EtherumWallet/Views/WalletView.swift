@@ -13,76 +13,87 @@ struct WalletView: View {
     @State private var selectedPage: Page = .home
     @State private var wallet: WalletInfo?
     @State private var transactions: [Transaction] = []
+    @State private var ethPrice: EthPriceResponse?
+    @State private var ethBalance: Double?
     
     var mode: Mode
+    
+    var currentEthWalletBalanceInUSD: String {
+        let doubleValue = (ethBalance ?? 0) * (Double(ethPrice?.ethereum.usd ?? 0))
+        return doubleValue.formatted(.currency(code: "USD").locale(Locale(identifier: "en_US")))
+    }
 
     var body: some View {
-        GeometryReader { geometryProxy in
-            VStack(spacing: 0) {
-                HStack(spacing: 0) {
-                    Image("account-connected")
-                        .padding(.leading, 12)
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Your Wallet")
-                            .font(Fonts.Karla.bold.swiftUIFont(size: 14))
-                            .foregroundColor(Color(hex: "424242").opacity(0.9))
-                            .tracking(-0.14)
-                        HStack {
-                            Text(wallet?.addressPreview ?? "")
-                                .font(Fonts.Karla.medium.swiftUIFont(size: 14))
-                                .foregroundColor(Color(hex: "424242").opacity(0.6))
+        NavigationView {
+            GeometryReader { geometryProxy in
+                VStack(spacing: 0) {
+                    HStack(spacing: 0) {
+                        Image("account-connected")
+                            .padding(.leading, 12)
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("Your Wallet")
+                                .font(Fonts.Karla.bold.swiftUIFont(size: 14))
+                                .foregroundColor(Color(hex: "424242").opacity(0.9))
                                 .tracking(-0.14)
-                            Image("copy")
-                            Spacer()
-                        }
-                    }
-                    .padding(.leading, 6)
-                    Spacer()
-                    HStack(spacing: 8) {
-                        ForEach(Page.allCases, id: \.self) { item in
-                            Button(action: {
-                                selectedPage = item
-                            }) {
-                                item.image
+                            HStack {
+                                Text(wallet?.addressPreview ?? "")
+                                    .font(Fonts.Karla.medium.swiftUIFont(size: 14))
+                                    .foregroundColor(Color(hex: "424242").opacity(0.6))
+                                    .tracking(-0.14)
+                                Image("copy")
+                                Spacer()
                             }
-                            .frame(width: 44, height: 44)
-                            .background(selectedPage == item ? Color(hex: "424242").opacity(0.05) : Color.white)
-                            .cornerRadius(7)
                         }
+                        .padding(.leading, 6)
+                        Spacer()
+                        HStack(spacing: 8) {
+                            ForEach(Page.allCases, id: \.self) { item in
+                                Button(action: {
+                                    selectedPage = item
+                                }) {
+                                    item.image
+                                }
+                                .frame(width: 44, height: 44)
+                                .background(selectedPage == item ? Color(hex: "424242").opacity(0.05) : Color.white)
+                                .cornerRadius(7)
+                            }
+                        }
+                        .padding(.trailing, 12)
                     }
-                    .padding(.trailing, 12)
+                    .frame(height: 68)
+                    .background(Color.white)
+                    .cornerRadius(7)
+                    .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
+                    
+                    switch selectedPage {
+                    case .home:
+                        homeContent(with: geometryProxy)
+                    case .swap:
+                        Spacer()
+                    case .history:
+                        historyContent()
+                    }
                 }
-                .frame(height: 68)
-                .background(Color.white)
-                .cornerRadius(7)
-                .padding(EdgeInsets(top: 24, leading: 24, bottom: 24, trailing: 24))
-                
-                switch selectedPage {
-                case .home:
-                    homeContent(with: geometryProxy)
-                case .swap:
-                    Spacer()
-                case .history:
-                    historyContent()
-                }
+                .frame(
+                    width: geometryProxy.size.width,
+                    height: geometryProxy.size.height,
+                    alignment: .topLeading
+                )
+                .background(Color(hex: "F8F8F8"))
             }
-            .frame(
-                width: geometryProxy.size.width,
-                height: geometryProxy.size.height,
-                alignment: .topLeading
-            )
-            .background(Color(hex: "F8F8F8"))
-        }.onAppear(perform: initialize)
+            .onAppear(perform: initialize)
+            .navigationBarHidden(true)
+        }
     }
     
     @ViewBuilder
     func homeContent(with geometryProxy: GeometryProxy) -> some View {
         VStack {
             VStack {
-                Text("$404.18")
+                Text(currentEthWalletBalanceInUSD)
                     .font(Fonts.Karla.bold.swiftUIFont(size: 32))
                     .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)))
-                Text("+12.44%")
+                Text("+0%") // TODO: Add option to compare with the previous day
                     .font(Fonts.Karla.medium.swiftUIFont(size: 18))
                     .foregroundColor(Color(#colorLiteral(red: 0.23, green: 0.8, blue: 0.42, alpha: 1)))
                     .tracking(-0.18)
@@ -95,25 +106,31 @@ struct WalletView: View {
         
         HStack(spacing: 12) {
             Spacer()
-            Button(action: {}) {
-                HStack(spacing: 12) {
+            NavigationLink(destination: SendView(ethBalance: $ethBalance)) {
+                HStack(spacing: 6) {
                     Asset.arrowSmRight.swiftUIImage
+                        .padding(.leading, 10)
                     Text("Send")
                         .font(Fonts.Karla.bold.swiftUIFont(size: 15))
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                         .tracking(-0.15)
                         .multilineTextAlignment(.center)
+                        .padding(.trailing, 10)
                 }
+                .frame(width: 86, height: 32)
+                .background(Color(hex: "424242"))
+                .cornerRadius(7)
             }
-            .frame(width: 86, height: 32)
-            .background(Color(hex: "424242"))
-            .cornerRadius(7)
             Button(action: {}) {
-                Image("cash")
-                Text("Deposit")
-                    .font(Fonts.Karla.bold.swiftUIFont(size: 15))
-                    .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)))
-                    .tracking(-0.15).multilineTextAlignment(.center)
+                HStack(spacing: 6) {
+                    Asset.cash.swiftUIImage
+                        .padding(.leading, 10)
+                    Text("Deposit")
+                        .font(Fonts.Karla.bold.swiftUIFont(size: 15))
+                        .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)))
+                        .tracking(-0.15).multilineTextAlignment(.center)
+                        .padding(.trailing, 10)
+                }
             }
             .frame(width: 104, height: 36)
             .cornerRadiusWithBorder(radius: 7, borderLineWidth: 2, borderColor: Color(hex: "424242").opacity(0.25))
@@ -128,11 +145,36 @@ struct WalletView: View {
         }
         .padding(24)
         
-        HStack {
+        HStack(spacing: 0) {
             Group {
                 Asset.ethIcon.swiftUIImage
             }
-        }
+            .frame(width: 40, height: 40)
+            .background(Color.white)
+            .cornerRadius(7)
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Ethereum")
+                    .font(Fonts.Karla.bold.swiftUIFont(size: 16))
+                    .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)))
+                Text("\(ethBalance ?? 0) ETH")
+                    .font(Fonts.Karla.medium.swiftUIFont(size: 14))
+                    .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 0.6)))
+            }.padding(.leading, 16)
+            
+            Spacer()
+            
+            VStack(alignment: .trailing, spacing: 0) {
+                Text(currentEthWalletBalanceInUSD)
+                    .font(Fonts.Karla.bold.swiftUIFont(size: 16))
+                    .foregroundColor(Color(#colorLiteral(red: 0.26, green: 0.26, blue: 0.26, alpha: 1)))
+                    .multilineTextAlignment(.trailing)
+                Text("+$0") // TODO: Add option to compare with the previous day
+                    .font(Fonts.Karla.medium.swiftUIFont(size: 14))
+                    .foregroundColor(Color(#colorLiteral(red: 0.23, green: 0.8, blue: 0.42, alpha: 1)))
+                    .multilineTextAlignment(.trailing)
+            }.padding(.trailing, 16)
+        }.padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
         
         Spacer()
     }
@@ -214,13 +256,28 @@ struct WalletView: View {
         }
     }
     
+    func ethAmount(for value: String) -> Double? {
+        guard let gwei = Double(value) else { return nil }
+        return gwei / 1_000_000_000_000_000_000
+    }
+    
+    func fethBalance() {
+        guard let address = wallet?.address else { return }
+        
+        Task {
+            let balance = try await EtherWallet.balance.tokenBalanceSync(contractAddress: address)
+            self.ethBalance = ethAmount(for: balance)
+        }
+    }
+    
     func initialize() {
         switch mode {
         case .new:
             do {
-                if let walletInfo = try EtherWallet.util.createWallet() {
+                if let walletInfo = try EtherWallet.util.createWallet(password: "") {
                     debugPrint(walletInfo)
                     wallet = walletInfo
+                    self.fethBalance()
                 }
             } catch {
                 debugPrint(error.localizedDescription)
@@ -230,10 +287,15 @@ struct WalletView: View {
                 if let walletInfo = try EtherWallet.util.importWallet(with: mnemonics) {
                     debugPrint(walletInfo)
                     wallet = walletInfo
+                    self.fethBalance()
                 }
             } catch {
                 debugPrint(error.localizedDescription)
             }
+        }
+        
+        Task {
+            self.ethPrice = try await EtherWallet.history.getEthPrice()
         }
     }
 }

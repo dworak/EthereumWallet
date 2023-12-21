@@ -15,6 +15,7 @@ public protocol TransactionService {
     func sendTokenSync(to toAddress: String, contractAddress: String, amount: String, password: String, decimal: Int, gasPrice: String?) async throws -> String
     func sendToken(to toAddress: String, contractAddress: String, amount: String, password: String, decimal:Int, completion: @escaping (String?) -> ())
     func sendToken(to toAddress: String, contractAddress: String, amount: String, password: String, decimal:Int, gasPrice: String?, completion: @escaping (String?) -> ())
+    func estimateGasPrice(to: String, value: String) async throws -> BigUInt?
 }
 
 extension EtherWallet: TransactionService {
@@ -25,7 +26,6 @@ extension EtherWallet: TransactionService {
     public func sendEtherSync(to address: String, amount: String, password: String, gasPrice: String?) async throws -> String {
         guard let toAddress = EthereumAddress(address) else { throw WalletError.invalidAddress }
         let keystore = try loadKeystore()
-        
         
         let etherBalance = try await etherBalanceSync()
         guard let etherBalanceInDouble = Double(etherBalance) else { throw WalletError.conversionFailure }
@@ -51,7 +51,11 @@ extension EtherWallet: TransactionService {
         sendTx.transaction.value = valueToSend
         sendTx.transaction.from = allAddresses[0]
         
+        // let policies = Policies(gasLimitPolicy: .manual(78423)) TODO: Add gas manual policy
+        
         let result = try await sendTx.writeToChain(password: password, sendRaw: false)
+        let txHash = Data.fromHex(result.hash.stripHexPrefix())!
+        let receipt = try await web3Instance.eth.transactionReceipt(txHash)
         
         return Data.fromHex(result.hash.stripHexPrefix())!.toHexString()
     }
@@ -117,5 +121,27 @@ extension EtherWallet: TransactionService {
                 }
             }
         }
+    }
+    
+    public func estimateGasPrice(to: String, value: String) async throws -> BigUInt? {
+        guard let toAddress = EthereumAddress(to), toAddress.isValid else { return nil }
+        
+        let web3Instance = try await Web3.InfuraMainnetWeb3()
+        let keystore = try loadKeystore()
+        let keystoreManager = KeystoreManager([keystore])
+        web3Instance.addKeystoreManager(keystoreManager)
+
+        var tx = CodableTransaction(
+            type: .eip1559,
+            to: toAddress,
+            chainID: web3Instance.provider.network!.chainID,
+            value: Utilities.parseToBigUInt(value, units: .ether)!,
+            gasLimit: 21_000
+        )
+        
+        let allAddresses = try await web3Instance.eth.ownedAccounts()
+        tx.from = allAddresses[0]
+        
+        return try await web3Instance.eth.estimateGas(for: tx)
     }
 }
