@@ -891,6 +891,40 @@
 		96EB6C4027DBEE9800A9D159 /* SearchGroupedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB6C3F27DBEE9800A9D159 /* SearchGroupedItemsViewController.swift */; };
 		96EB6C4327DC205D00A9D159 /* SearchGroupedItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EB6C4227DC205D00A9D159 /* SearchGroupedItemsViewModel.swift */; };
 		96F8DA49280452CA00E53239 /* GleanPlumbContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DA48280452CA00E53239 /* GleanPlumbContextProvider.swift */; };
+		A00FD8F52B3314D2003DAC21 /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = A00FD8F42B3314D2003DAC21 /* web3swift */; };
+		A00FD9002B331507003DAC21 /* EtherWallet+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8F72B331505003DAC21 /* EtherWallet+Account.swift */; };
+		A00FD9022B331507003DAC21 /* EtherWallet+Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8F92B331505003DAC21 /* EtherWallet+Balance.swift */; };
+		A00FD9032B331507003DAC21 /* EtherWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FA2B331506003DAC21 /* EtherWallet.swift */; };
+		A00FD9042B331507003DAC21 /* EtherWallet+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FB2B331506003DAC21 /* EtherWallet+Info.swift */; };
+		A00FD9052B331507003DAC21 /* EtherWallet+Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FC2B331506003DAC21 /* EtherWallet+Transaction.swift */; };
+		A00FD9062B331507003DAC21 /* EtherWallet+History.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FD2B331506003DAC21 /* EtherWallet+History.swift */; };
+		A00FD9072B331507003DAC21 /* EtherWallet+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FE2B331506003DAC21 /* EtherWallet+Util.swift */; };
+		A00FD9082B331507003DAC21 /* WalletError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD8FF2B331507003DAC21 /* WalletError.swift */; };
+		A00FD90E2B33151C003DAC21 /* GasStationAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD90A2B33151B003DAC21 /* GasStationAPIResponse.swift */; };
+		A00FD90F2B33151C003DAC21 /* EthplorerAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD90B2B33151B003DAC21 /* EthplorerAPIResponse.swift */; };
+		A00FD9102B33151C003DAC21 /* EtherscanAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD90C2B33151C003DAC21 /* EtherscanAPIResponse.swift */; };
+		A00FD9112B33151C003DAC21 /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD90D2B33151C003DAC21 /* TransactionData.swift */; };
+		A00FD9142B331F9B003DAC21 /* KeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A00FD9132B331F9B003DAC21 /* KeychainWrapper */; };
+		A00FD9172B3366A6003DAC21 /* EtherScanAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9162B3366A6003DAC21 /* EtherScanAPI.swift */; };
+		A00FD91A2B3366CA003DAC21 /* EtherScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9192B3366CA003DAC21 /* EtherScanModel.swift */; };
+		A00FD91D2B336FC4003DAC21 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD91C2B336FC4003DAC21 /* WalletView.swift */; };
+		A00FD9202B3386DD003DAC21 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD91F2B3386DD003DAC21 /* Color+Hex.swift */; };
+		A00FD9272B33967A003DAC21 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9252B33967A003DAC21 /* Assets.swift */; };
+		A00FD9282B33967A003DAC21 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00FD9262B33967A003DAC21 /* Fonts.swift */; };
+		A00FD9372B33968F003DAC21 /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9292B33968C003DAC21 /* Karla-Regular.ttf */; };
+		A00FD9382B33968F003DAC21 /* Karla-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92A2B33968C003DAC21 /* Karla-ExtraBoldItalic.ttf */; };
+		A00FD9392B33968F003DAC21 /* Karla-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92B2B33968C003DAC21 /* Karla-ExtraLightItalic.ttf */; };
+		A00FD93A2B33968F003DAC21 /* Karla-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92C2B33968D003DAC21 /* Karla-ExtraLight.ttf */; };
+		A00FD93B2B33968F003DAC21 /* Karla-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92D2B33968D003DAC21 /* Karla-SemiBold.ttf */; };
+		A00FD93C2B33968F003DAC21 /* Karla-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92E2B33968D003DAC21 /* Karla-Light.ttf */; };
+		A00FD93D2B33968F003DAC21 /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD92F2B33968D003DAC21 /* Karla-BoldItalic.ttf */; };
+		A00FD93E2B33968F003DAC21 /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9302B33968D003DAC21 /* Karla-Bold.ttf */; };
+		A00FD93F2B33968F003DAC21 /* Karla-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9312B33968D003DAC21 /* Karla-Medium.ttf */; };
+		A00FD9402B33968F003DAC21 /* Karla-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9322B33968E003DAC21 /* Karla-ExtraBold.ttf */; };
+		A00FD9412B33968F003DAC21 /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9332B33968E003DAC21 /* Karla-Italic.ttf */; };
+		A00FD9422B33968F003DAC21 /* Karla-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9342B33968E003DAC21 /* Karla-SemiBoldItalic.ttf */; };
+		A00FD9432B33968F003DAC21 /* Karla-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9352B33968E003DAC21 /* Karla-LightItalic.ttf */; };
+		A00FD9442B33968F003DAC21 /* Karla-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00FD9362B33968F003DAC21 /* Karla-MediumItalic.ttf */; };
 		A02B52612B2B38DC00DC03FE /* Summarizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02B52582B2B38DA00DC03FE /* Summarizer.swift */; };
 		A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB65F2B2B5183003AC439 /* SummaryViewController.swift */; };
 		A0DAB7622B2BD2B4003AC439 /* GPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAB7612B2BD2B4003AC439 /* GPTAPI.swift */; };
@@ -5705,6 +5739,38 @@
 		9F974E3DAFCB46BF67A807D0 /* ta */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ta; path = ta.lproj/Search.strings; sourceTree = "<group>"; };
 		9FA740EF995B25873421D001 /* gl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gl; path = gl.lproj/AuthenticationManager.strings; sourceTree = "<group>"; };
 		A00D4D7599E56079EE99A4C9 /* eu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = eu; path = eu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00FD8F72B331505003DAC21 /* EtherWallet+Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+Account.swift"; sourceTree = "<group>"; };
+		A00FD8F92B331505003DAC21 /* EtherWallet+Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+Balance.swift"; sourceTree = "<group>"; };
+		A00FD8FA2B331506003DAC21 /* EtherWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtherWallet.swift; sourceTree = "<group>"; };
+		A00FD8FB2B331506003DAC21 /* EtherWallet+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+Info.swift"; sourceTree = "<group>"; };
+		A00FD8FC2B331506003DAC21 /* EtherWallet+Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+Transaction.swift"; sourceTree = "<group>"; };
+		A00FD8FD2B331506003DAC21 /* EtherWallet+History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+History.swift"; sourceTree = "<group>"; };
+		A00FD8FE2B331506003DAC21 /* EtherWallet+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EtherWallet+Util.swift"; sourceTree = "<group>"; };
+		A00FD8FF2B331507003DAC21 /* WalletError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletError.swift; sourceTree = "<group>"; };
+		A00FD90A2B33151B003DAC21 /* GasStationAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationAPIResponse.swift; sourceTree = "<group>"; };
+		A00FD90B2B33151B003DAC21 /* EthplorerAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthplorerAPIResponse.swift; sourceTree = "<group>"; };
+		A00FD90C2B33151C003DAC21 /* EtherscanAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtherscanAPIResponse.swift; sourceTree = "<group>"; };
+		A00FD90D2B33151C003DAC21 /* TransactionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
+		A00FD9162B3366A6003DAC21 /* EtherScanAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherScanAPI.swift; sourceTree = "<group>"; };
+		A00FD9192B3366CA003DAC21 /* EtherScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherScanModel.swift; sourceTree = "<group>"; };
+		A00FD91C2B336FC4003DAC21 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		A00FD91F2B3386DD003DAC21 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		A00FD9252B33967A003DAC21 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		A00FD9262B33967A003DAC21 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		A00FD9292B33968C003DAC21 /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
+		A00FD92A2B33968C003DAC21 /* Karla-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		A00FD92B2B33968C003DAC21 /* Karla-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		A00FD92C2B33968D003DAC21 /* Karla-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A00FD92D2B33968D003DAC21 /* Karla-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-SemiBold.ttf"; sourceTree = "<group>"; };
+		A00FD92E2B33968D003DAC21 /* Karla-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Light.ttf"; sourceTree = "<group>"; };
+		A00FD92F2B33968D003DAC21 /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A00FD9302B33968D003DAC21 /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
+		A00FD9312B33968D003DAC21 /* Karla-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Medium.ttf"; sourceTree = "<group>"; };
+		A00FD9322B33968E003DAC21 /* Karla-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A00FD9332B33968E003DAC21 /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
+		A00FD9342B33968E003DAC21 /* Karla-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A00FD9352B33968E003DAC21 /* Karla-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-LightItalic.ttf"; sourceTree = "<group>"; };
+		A00FD9362B33968F003DAC21 /* Karla-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-MediumItalic.ttf"; sourceTree = "<group>"; };
 		A02B52582B2B38DA00DC03FE /* Summarizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summarizer.swift; sourceTree = "<group>"; };
 		A0584C2091A7B47A062CD7ED /* kab */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = kab; path = kab.lproj/Intro.strings; sourceTree = "<group>"; };
 		A0CE43FF808F6F9D400D83DC /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -7371,6 +7437,7 @@
 				8A08EC6227EBDCA400E119C7 /* iAd.framework in Frameworks */,
 				43BE580E278BABCF00491291 /* RustMozillaAppServices.framework in Frameworks */,
 				C82043852523DBF600740B71 /* Sync.framework in Frameworks */,
+				A00FD8F52B3314D2003DAC21 /* web3swift in Frameworks */,
 				5A37861929A2C337006B3A34 /* Sentry in Frameworks */,
 				8AF2D0FC2A5F272A00C7DD69 /* ComponentLibrary in Frameworks */,
 				5A871490292EA3910039A5BD /* SiteImageView in Frameworks */,
@@ -7388,6 +7455,7 @@
 				435C85F02788F4D00072B526 /* Glean in Frameworks */,
 				433F87CE2788EAB600693368 /* GCDWebServers in Frameworks */,
 				5A06135A29D6052E008F3D38 /* TabDataStore in Frameworks */,
+				A00FD9142B331F9B003DAC21 /* KeychainWrapper in Frameworks */,
 				216A0D762A40E7AB008077BA /* Redux in Frameworks */,
 				7B8A47F61D01D3B400C07734 /* PassKit.framework in Frameworks */,
 				5A8FD0EC293A7D5E00333AA7 /* SnapKit in Frameworks */,
@@ -8175,6 +8243,8 @@
 		39EF434C260A736D0011E22E /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
+				A00FD9152B33668C003DAC21 /* EtherScan */,
+				A00FD8F62B3314E2003DAC21 /* EtherumWallet */,
 				A02B52562B2B38B500DC03FE /* Summary */,
 				9636D92627F5D71A00771F5E /* Messaging */,
 				39EF434D260A73950011E22E /* Experiments.swift */,
@@ -9427,6 +9497,101 @@
 				96EB6C4227DC205D00A9D159 /* SearchGroupedItemsViewModel.swift */,
 			);
 			path = GeneralizedTableView;
+			sourceTree = "<group>";
+		};
+		A00FD8F62B3314E2003DAC21 /* EtherumWallet */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9212B33953F003DAC21 /* Assets */,
+				A00FD91E2B3386CA003DAC21 /* Extensions */,
+				A00FD91B2B336FB6003DAC21 /* Views */,
+				A00FD9092B33150E003DAC21 /* Model */,
+				A00FD8FA2B331506003DAC21 /* EtherWallet.swift */,
+				A00FD8F72B331505003DAC21 /* EtherWallet+Account.swift */,
+				A00FD8F92B331505003DAC21 /* EtherWallet+Balance.swift */,
+				A00FD8FD2B331506003DAC21 /* EtherWallet+History.swift */,
+				A00FD8FB2B331506003DAC21 /* EtherWallet+Info.swift */,
+				A00FD8FC2B331506003DAC21 /* EtherWallet+Transaction.swift */,
+				A00FD8FE2B331506003DAC21 /* EtherWallet+Util.swift */,
+				A00FD8FF2B331507003DAC21 /* WalletError.swift */,
+			);
+			path = EtherumWallet;
+			sourceTree = "<group>";
+		};
+		A00FD9092B33150E003DAC21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD90C2B33151C003DAC21 /* EtherscanAPIResponse.swift */,
+				A00FD90B2B33151B003DAC21 /* EthplorerAPIResponse.swift */,
+				A00FD90A2B33151B003DAC21 /* GasStationAPIResponse.swift */,
+				A00FD90D2B33151C003DAC21 /* TransactionData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A00FD9152B33668C003DAC21 /* EtherScan */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9182B3366B5003DAC21 /* Model */,
+				A00FD9162B3366A6003DAC21 /* EtherScanAPI.swift */,
+			);
+			path = EtherScan;
+			sourceTree = "<group>";
+		};
+		A00FD9182B3366B5003DAC21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9192B3366CA003DAC21 /* EtherScanModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A00FD91B2B336FB6003DAC21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD91C2B336FC4003DAC21 /* WalletView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A00FD91E2B3386CA003DAC21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD91F2B3386DD003DAC21 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A00FD9212B33953F003DAC21 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9222B339549003DAC21 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A00FD9222B339549003DAC21 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9232B33954E003DAC21 /* Karla */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A00FD9232B33954E003DAC21 /* Karla */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Karla;
+			sourceTree = "<group>";
+		};
+		A00FD9242B33967A003DAC21 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				A00FD9252B33967A003DAC21 /* Assets.swift */,
+				A00FD9262B33967A003DAC21 /* Fonts.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		A02B52562B2B38B500DC03FE /* Summary */ = {
@@ -10984,6 +11149,7 @@
 				45D5EDC1292D636000311934 /* nimbus.fml.yaml */,
 				C8E2E80623D20FB3005AACE6 /* RustFxA */,
 				2FA435FC1ABB83B4008031D1 /* Account */,
+				A00FD9242B33967A003DAC21 /* Generated */,
 				F84B21C01A090F8100AAB793 /* Client */,
 				F8708D1E1A0970990051AB07 /* Extensions */,
 				047F9B2A24E1FE1C00CD7DF7 /* WidgetKit */,
@@ -11285,6 +11451,20 @@
 		F84B22391A0914A300AAB793 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				A00FD9302B33968D003DAC21 /* Karla-Bold.ttf */,
+				A00FD92F2B33968D003DAC21 /* Karla-BoldItalic.ttf */,
+				A00FD9322B33968E003DAC21 /* Karla-ExtraBold.ttf */,
+				A00FD92A2B33968C003DAC21 /* Karla-ExtraBoldItalic.ttf */,
+				A00FD92C2B33968D003DAC21 /* Karla-ExtraLight.ttf */,
+				A00FD92B2B33968C003DAC21 /* Karla-ExtraLightItalic.ttf */,
+				A00FD9332B33968E003DAC21 /* Karla-Italic.ttf */,
+				A00FD92E2B33968D003DAC21 /* Karla-Light.ttf */,
+				A00FD9352B33968E003DAC21 /* Karla-LightItalic.ttf */,
+				A00FD9312B33968D003DAC21 /* Karla-Medium.ttf */,
+				A00FD9362B33968F003DAC21 /* Karla-MediumItalic.ttf */,
+				A00FD9292B33968C003DAC21 /* Karla-Regular.ttf */,
+				A00FD92D2B33968D003DAC21 /* Karla-SemiBold.ttf */,
+				A00FD9342B33968E003DAC21 /* Karla-SemiBoldItalic.ttf */,
 				23BEA766251A99E300A014BF /* NewYorkMedium-Bold.otf */,
 				23BEA765251A99E200A014BF /* NewYorkMedium-BoldItalic.otf */,
 				23BEA763251A99E200A014BF /* NewYorkMedium-Regular.otf */,
@@ -11735,6 +11915,8 @@
 				5A06135929D6052E008F3D38 /* TabDataStore */,
 				216A0D752A40E7AB008077BA /* Redux */,
 				8AF2D0FB2A5F272A00C7DD69 /* ComponentLibrary */,
+				A00FD8F42B3314D2003DAC21 /* web3swift */,
+				A00FD9132B331F9B003DAC21 /* KeychainWrapper */,
 			);
 			productName = Client;
 			productReference = F84B21BE1A090F8100AAB793 /* Client.app */;
@@ -12054,6 +12236,8 @@
 				43AFC0E027967BFA0039DDF4 /* XCRemoteSwiftPackageReference "Fuzi" */,
 				43C6A47D27A0679300C79856 /* XCRemoteSwiftPackageReference "MappaMundi" */,
 				5A37861729A2C337006B3A34 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				A00FD8F32B3314D2003DAC21 /* XCRemoteSwiftPackageReference "web3swift" */,
+				A00FD9122B331F9B003DAC21 /* XCRemoteSwiftPackageReference "KeychainWrapper" */,
 			);
 			productRefGroup = F84B21BF1A090F8100AAB793 /* Products */;
 			projectDirPath = "";
@@ -12217,6 +12401,7 @@
 				8AA1A8882AF2A0C90026B0E0 /* disconnect-block-analytics.json in Resources */,
 				8AA1A8892AF2A0C90026B0E0 /* disconnect-block-cookies-advertising.json in Resources */,
 				8AA1A88A2AF2A0C90026B0E0 /* disconnect-block-cookies-content.json in Resources */,
+				A00FD9432B33968F003DAC21 /* Karla-LightItalic.ttf in Resources */,
 				8AA1A88B2AF2A0C90026B0E0 /* disconnect-block-content.json in Resources */,
 				D4AFAB0E2AFA8F9A000BFEAA /* SyncIntegrationTests in Resources */,
 				8AA1A88C2AF2A0C90026B0E0 /* disconnect-block-advertising.json in Resources */,
@@ -12226,6 +12411,7 @@
 				C8B0F5F8283B7D38007AE65D /* pocketsponsoredfeed.json in Resources */,
 				D38A1EE01CB458EC0080C842 /* CertError.html in Resources */,
 				8AEE62CB2756BA34003207D1 /* DownloadHelper.js in Resources */,
+				A00FD9442B33968F003DAC21 /* Karla-MediumItalic.ttf in Resources */,
 				8AEE62CA2756BA34003207D1 /* TrackingProtectionStats.js in Resources */,
 				0BA1E0301B051A07007675AF /* NetError.css in Resources */,
 				3BC659491E5BA4AE006D560F /* TopSites in Resources */,
@@ -12234,26 +12420,37 @@
 				7B42406E1CA04CAC009B5C28 /* Menu.xcassets in Resources */,
 				4336FAD2264B169000A6B076 /* WebcompatAllFramesAtDocumentStart.js in Resources */,
 				23BEA767251A99ED00A014BF /* NewYorkMedium-Bold.otf in Resources */,
+				A00FD93B2B33968F003DAC21 /* Karla-SemiBold.ttf in Resources */,
 				3BC659591E5BA505006D560F /* bundle_sites.json in Resources */,
+				A00FD93D2B33968F003DAC21 /* Karla-BoldItalic.ttf in Resources */,
 				E4CD9F541A71506400318571 /* Reader.html in Resources */,
+				A00FD9392B33968F003DAC21 /* Karla-ExtraLightItalic.ttf in Resources */,
 				E1AF3563286DE5F800960045 /* FullFunctionalTestPlan.xctestplan in Resources */,
 				E1AF3567286DE5F800960045 /* PerformanceTestPlan.xctestplan in Resources */,
 				23BEA76A251A99ED00A014BF /* NewYorkMedium-RegularItalic.otf in Resources */,
+				A00FD9412B33968F003DAC21 /* Karla-Italic.ttf in Resources */,
 				7B2142FE1E5E055000CDD3FC /* InfoPlist.strings in Resources */,
+				A00FD93F2B33968F003DAC21 /* Karla-Medium.ttf in Resources */,
 				E1AF27442A17BCF700CE5991 /* engagementNotificationWithoutConditions.json in Resources */,
+				A00FD93A2B33968F003DAC21 /* Karla-ExtraLight.ttf in Resources */,
 				E69922171B94E3EF007C480D /* Licenses.html in Resources */,
 				E1AF3560286DE5F800960045 /* Smoketest3.xctestplan in Resources */,
 				E4CD9F5B1A71506C00318571 /* Reader.css in Resources */,
+				A00FD9382B33968F003DAC21 /* Karla-ExtraBoldItalic.ttf in Resources */,
 				D0FCF8061FE4772D004A7995 /* AllFramesAtDocumentEnd.js in Resources */,
 				D37524871C6E8B5A00A5F6C2 /* topdomains.txt in Resources */,
 				7B4980A81CE363ED0017547C /* Settings.xcassets in Resources */,
+				A00FD9372B33968F003DAC21 /* Karla-Regular.ttf in Resources */,
 				39F4C0FA2045D87400746155 /* FocusHelper.js in Resources */,
 				E1AF3562286DE5F800960045 /* Smoketest2.xctestplan in Resources */,
 				2F44FB2C1A9D5D8500FD20CC /* Library.xcassets in Resources */,
 				43175DB626B8774D00C41C31 /* Ads.js in Resources */,
+				A00FD9422B33968F003DAC21 /* Karla-SemiBoldItalic.ttf in Resources */,
 				D0FCF8081FE4772D004A7995 /* MainFrameAtDocumentStart.js in Resources */,
 				D30684F11C84F12A002D8D82 /* SearchPlugins in Resources */,
 				8A5CDEED27E510F500CC60FF /* pocketglobalfeed.json in Resources */,
+				A00FD93C2B33968F003DAC21 /* Karla-Light.ttf in Resources */,
+				A00FD93E2B33968F003DAC21 /* Karla-Bold.ttf in Resources */,
 				74821FFE1DB6D3AC00EEEA72 /* MailSchemes.plist in Resources */,
 				FA9294011D6584A200AC8D33 /* QRCode.xcassets in Resources */,
 				D308EE561CBF0BF5006843F2 /* CertError.css in Resources */,
@@ -12261,6 +12458,7 @@
 				E1AF3561286DE5F800960045 /* Smoketest4.xctestplan in Resources */,
 				8A2B1A5D28216C4D0061216B /* Debug.xcconfig in Resources */,
 				0BA1E00E1B03FB0B007675AF /* NetError.html in Resources */,
+				A00FD9402B33968F003DAC21 /* Karla-ExtraBold.ttf in Resources */,
 				23BEA768251A99ED00A014BF /* NewYorkMedium-BoldItalic.otf in Resources */,
 				E4A961381AC06FA50069AD6F /* ReaderViewLoading.html in Resources */,
 				E1AF3565286DE5F800960045 /* UnitTest.xctestplan in Resources */,
@@ -12978,6 +13176,7 @@
 				E1E5BE252A28F7BE00248F77 /* PasswordDetailViewControllerModel.swift in Sources */,
 				E1FE133129C22726002A65FF /* BackgroundFetchAndProcessingUtility.swift in Sources */,
 				8AD40FD527BB1C1000672675 /* LockButton.swift in Sources */,
+				A00FD9072B331507003DAC21 /* EtherWallet+Util.swift in Sources */,
 				5F130D2E2483508E00B0F7D0 /* FxAWebViewModel.swift in Sources */,
 				2109478928AFD24C00B73D44 /* OnboardingViewControllerProtocol.swift in Sources */,
 				D0FCF7F51FE45842004A7995 /* UserScriptManager.swift in Sources */,
@@ -13033,6 +13232,7 @@
 				8A395552299AF83400B2AFBB /* UIControl+Extension.swift in Sources */,
 				C2A72A692A769460002ACCE2 /* ReadingListCoordinator.swift in Sources */,
 				F85C7F122721048E004BDBA4 /* Layout.swift in Sources */,
+				A00FD9202B3386DD003DAC21 /* Color+Hex.swift in Sources */,
 				DF036E43274FD434002E834E /* HistoryHighlightsCell.swift in Sources */,
 				EB9A179C20E69A7F00B12184 /* LegacyDarkTheme.swift in Sources */,
 				21618A8A2A4389F700A5189E /* ActiveScreenState.swift in Sources */,
@@ -13093,6 +13293,7 @@
 				A0DAB6602B2B5183003AC439 /* SummaryViewController.swift in Sources */,
 				219A0FD52ACC8506009A6D1A /* InactiveTabsCell.swift in Sources */,
 				23D57E6E25ED6F2700883FAD /* SearchViewController.swift in Sources */,
+				A00FD9082B331507003DAC21 /* WalletError.swift in Sources */,
 				A0DAB7662B2BD3AA003AC439 /* Summarizer+NLP.swift in Sources */,
 				C82A94F2269F68ED00624AA7 /* LegacyFeatureFlagsManager.swift in Sources */,
 				C8610DAA2A0EBF7100B79FF1 /* OnboardingCardDelegate.swift in Sources */,
@@ -13110,6 +13311,7 @@
 				8A93F87029D3A597004159D9 /* SceneCoordinator.swift in Sources */,
 				C88E7A602A05551B0072E638 /* NimbusOnboardingFeatureLayerProtocol.swift in Sources */,
 				8CFD56882AAF057D003157A6 /* SwitchFakespotProduction.swift in Sources */,
+				A00FD9172B3366A6003DAC21 /* EtherScanAPI.swift in Sources */,
 				C40046FA1CF8E0B200B08303 /* BackForwardListAnimator.swift in Sources */,
 				DD31E0FB1B382B520077078A /* TabPrintPageRenderer.swift in Sources */,
 				D81E45131F82C56D004EFFBA /* NewTabContentSettingsViewController.swift in Sources */,
@@ -13190,9 +13392,11 @@
 				8A3EF8092A2FD02B00796E3A /* ExperimentsSettings.swift in Sources */,
 				C87DF9DB267247190097E707 /* UIConstants+BottomInset.swift in Sources */,
 				8AD08D1527E9198E00B8E907 /* TabsQuantityTelemetry.swift in Sources */,
+				A00FD90E2B33151C003DAC21 /* GasStationAPIResponse.swift in Sources */,
 				74B420C92A1D0D7A00370E53 /* OnboardingInstructionsPopupInfoModel.swift in Sources */,
 				E13E9AB32AAB0FB5001A0E9D /* FakespotViewController.swift in Sources */,
 				E15DE7C4293A7B0F00B32667 /* PhotonActionSheetTitleHeaderView.swift in Sources */,
+				A00FD9002B331507003DAC21 /* EtherWallet+Account.swift in Sources */,
 				392ED7E61D0AEFEF009D9B62 /* HomePageAccessors.swift in Sources */,
 				8A0017C128A3FF6100FEFC8B /* MessageCardDataAdaptor.swift in Sources */,
 				7BA8D1C71BA037F500C8AE9E /* DownloadHelper.swift in Sources */,
@@ -13274,6 +13478,7 @@
 				5A271ABD2860B0D700471CE4 /* WebServerUtil.swift in Sources */,
 				964FA97528A1A8F20024BB3B /* ContextualHintEligibilityUtility.swift in Sources */,
 				439C489C29760575007C3DCD /* CreditCardValidator.swift in Sources */,
+				A00FD91D2B336FC4003DAC21 /* WalletView.swift in Sources */,
 				8ADC2A122A3375B900543DAA /* FxAEntryPoint.swift in Sources */,
 				216A0D7B2A40F08B008077BA /* ThemeSettingsAction.swift in Sources */,
 				C2506C932A6A863600F2B76E /* HistoryCoordinator.swift in Sources */,
@@ -13308,6 +13513,7 @@
 				21583E422B1A3703009D084D /* LegacyInactiveTabModel.swift in Sources */,
 				DF529EA12AB1B421003C5373 /* FakespotReliabilityScoreView.swift in Sources */,
 				9636D92A27F767EC00771F5E /* NimbusMessagingEvaluationUtility.swift in Sources */,
+				A00FD9052B331507003DAC21 /* EtherWallet+Transaction.swift in Sources */,
 				E127313F28B6C194006F39D2 /* WallpaperSettingsHeaderView.swift in Sources */,
 				2FDE87FE1ABB3817005317B1 /* LegacyRemoteTabsPanel.swift in Sources */,
 				8A3EF80F2A2FD05D00796E3A /* ToggleInactiveTabs.swift in Sources */,
@@ -13322,6 +13528,7 @@
 				D31A0FC71A65D6D000DC8C7E /* SearchSuggestClient.swift in Sources */,
 				8A57519927AD80B800A84DBF /* ReaderModeStyleViewModel.swift in Sources */,
 				435D7CC5246209AA0043ACB9 /* IntroViewController.swift in Sources */,
+				A00FD9272B33967A003DAC21 /* Assets.swift in Sources */,
 				C855728429AEA3C300AF32B0 /* SurveySurfaceViewModel.swift in Sources */,
 				CA4ACE4924C8C91600F55894 /* BreachAlertsDetailView.swift in Sources */,
 				C834ACD128D3ACA900203AD1 /* Blurrable.swift in Sources */,
@@ -13371,6 +13578,7 @@
 				96F8DA49280452CA00E53239 /* GleanPlumbContextProvider.swift in Sources */,
 				43DB9784292D6846002E0B9F /* ShareButton.swift in Sources */,
 				8AB8574627D97CB00075C173 /* HomepageContextMenuProtocol.swift in Sources */,
+				A00FD9282B33967A003DAC21 /* Fonts.swift in Sources */,
 				3BB50E201D627539004B33DF /* HomepageViewController.swift in Sources */,
 				C82A94F3269F68F300624AA7 /* CoreFlaggableFeature.swift in Sources */,
 				F84B22241A09122500AAB793 /* LibraryViewController.swift in Sources */,
@@ -13387,6 +13595,7 @@
 				8A3EF80D2A2FD04D00796E3A /* ResetWallpaperOnboardingPage.swift in Sources */,
 				E1FE132F29C0B3CB002A65FF /* NotificationSurfaceManager.swift in Sources */,
 				D88FDA9F1F4E2B9200FD9709 /* PhotonActionSheetProtocol.swift in Sources */,
+				A00FD90F2B33151C003DAC21 /* EthplorerAPIResponse.swift in Sources */,
 				21618A932A4499FC00A5189E /* AppState.swift in Sources */,
 				BD1C89CA2A1E3CE7000A4201 /* PocketFooterView.swift in Sources */,
 				E12BD0AE28AC38480029AAF0 /* UIImage+Extension.swift in Sources */,
@@ -13409,6 +13618,7 @@
 				8A83B7462A264FA0002FF9AC /* SettingsCoordinator.swift in Sources */,
 				A9072B801D07B34100459960 /* NoImageModeHelper.swift in Sources */,
 				433396C827ACE92500491049 /* LegacyInactiveTabButton.swift in Sources */,
+				A00FD9032B331507003DAC21 /* EtherWallet.swift in Sources */,
 				D8AA923421A602DC002605C0 /* HomePageSettingViewController.swift in Sources */,
 				8A161411282C035D00DDBB02 /* CustomizeHomepageSectionViewModel.swift in Sources */,
 				C8DC90C52A066B6A0008832B /* MarkupTokenizingUtility.swift in Sources */,
@@ -13454,6 +13664,7 @@
 				274A36CE239EB9EC00A21587 /* LibraryViewController+LibraryPanelDelegate.swift in Sources */,
 				C869912D28917688007ACC5C /* WallpaperImageLoader.swift in Sources */,
 				96A5F73829928B3700234E5F /* GeneralizedImageFetcher.swift in Sources */,
+				A00FD91A2B3366CA003DAC21 /* EtherScanModel.swift in Sources */,
 				1D7B78992ADF328E0011E9F2 /* AppEvent.swift in Sources */,
 				43F7952525795F69005AEE40 /* SearchTelemetry.swift in Sources */,
 				E65075541E37F6FC006961AC /* LegacyDynamicFontHelper.swift in Sources */,
@@ -13490,6 +13701,7 @@
 				8A3EF7F02A2FCF3100796E3A /* HiddenSettings.swift in Sources */,
 				AB03032B2AB47AF300DCD8EF /* FakespotOptInCardView.swift in Sources */,
 				0BA02DB22942605600C92603 /* FormAutofillHelper.swift in Sources */,
+				A00FD9022B331507003DAC21 /* EtherWallet+Balance.swift in Sources */,
 				8A19ACB82A329128001C2147 /* PrivacyPolicySetting.swift in Sources */,
 				E68AEDB01B18F81A00133D99 /* SwipeAnimator.swift in Sources */,
 				1DDE3DB32AC34E1E0039363B /* TabCell.swift in Sources */,
@@ -13577,6 +13789,7 @@
 				8AB8573727D951640075C173 /* HomeLogoHeaderViewModel.swift in Sources */,
 				D3C744CD1A687D6C004CE85D /* URIFixup.swift in Sources */,
 				43D16B8029831DC5009F8279 /* CreditCardInputView.swift in Sources */,
+				A00FD9042B331507003DAC21 /* EtherWallet+Info.swift in Sources */,
 				21112968289480630082C08B /* HomepageMessageCardViewModel.swift in Sources */,
 				E1CD81BE290C5C7500124B27 /* DevicePickerTableViewHeaderCell.swift in Sources */,
 				E12BD0AC28AC37F00029AAF0 /* UIColor+Extension.swift in Sources */,
@@ -13654,12 +13867,14 @@
 				EBA3B2D22268F57E00728BDB /* BadgeWithBackdrop.swift in Sources */,
 				8AB5958828413F6C0090F4AE /* RecentlySavedCell.swift in Sources */,
 				8A83B7482A264FB7002FF9AC /* LibraryCoordinator.swift in Sources */,
+				A00FD9102B33151C003DAC21 /* EtherscanAPIResponse.swift in Sources */,
 				96EB6C3C27D82AEA00A9D159 /* HistoryPanel+ContextMenuExtensions.swift in Sources */,
 				E1CD81C2290C62A600124B27 /* HostingTableViewCell.swift in Sources */,
 				43175DB826B87D2C00C41C31 /* AdsTelemetryHelper.swift in Sources */,
 				E58368AA287D632F0087A449 /* StoryProvider.swift in Sources */,
 				8A3EF7FF2A2FCFBB00796E3A /* ChangeToChinaSetting.swift in Sources */,
 				E6327A641BF6438E008D12E0 /* DebugSettingsBundleOptions.swift in Sources */,
+				A00FD9062B331507003DAC21 /* EtherWallet+History.swift in Sources */,
 				F85C7EDD27109241004BDBA4 /* PasswordManagerOnboardingViewController.swift in Sources */,
 				D8FDEB57220CFE970069A582 /* UIImage+ImageEffects.m in Sources */,
 				EBB89506219398E500EB91A0 /* TabContentBlocker.swift in Sources */,
@@ -13672,6 +13887,7 @@
 				21D0F62129B91BF500022292 /* ToastView.swift in Sources */,
 				C849E46126B9C39B00260F0B /* EnhancedTrackingProtectionVC.swift in Sources */,
 				E40FAB0C1A7ABB77009CB80D /* WebServer.swift in Sources */,
+				A00FD9112B33151C003DAC21 /* TransactionData.swift in Sources */,
 				59A68D66379CFA85C4EAF00B /* TwoLineImageOverlayCell.swift in Sources */,
 				8A04136928258DF600D20B10 /* SponsoredTileTelemetry.swift in Sources */,
 				D04CD718215EBD85004FF5B0 /* SettingsLoadingView.swift in Sources */,
@@ -20275,6 +20491,22 @@
 				version = 8.17.1;
 			};
 		};
+		A00FD8F32B3314D2003DAC21 /* XCRemoteSwiftPackageReference "web3swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3swift-team/web3swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		A00FD9122B331F9B003DAC21 /* XCRemoteSwiftPackageReference "KeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/puretears/KeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -20459,6 +20691,16 @@
 		8AF2D0FB2A5F272A00C7DD69 /* ComponentLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ComponentLibrary;
+		};
+		A00FD8F42B3314D2003DAC21 /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A00FD8F32B3314D2003DAC21 /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
+		};
+		A00FD9132B331F9B003DAC21 /* KeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A00FD9122B331F9B003DAC21 /* XCRemoteSwiftPackageReference "KeychainWrapper" */;
+			productName = KeychainWrapper;
 		};
 		D433852B27ABC8150069DD33 /* MappaMundi */ = {
 			isa = XCSwiftPackageProductDependency;

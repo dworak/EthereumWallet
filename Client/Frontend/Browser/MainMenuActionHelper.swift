@@ -19,6 +19,7 @@ protocol ToolBarActionMenuDelegate: AnyObject {
     func openNewTabFromMenu(focusLocationField: Bool, isPrivate: Bool)
 
     func showLibrary(panel: LibraryPanelType)
+    func showWallet()
     func showViewController(viewController: UIViewController)
     func showToast(message: String, toastAction: MenuButtonToastAction)
     func showFindInPage()
@@ -675,6 +676,8 @@ class MainMenuActionHelper: PhotonActionSheetProtocol,
     private func getBookmarkSection() -> [PhotonRowActions] {
         var section = [PhotonRowActions]()
 
+        section.append(PhotonRowActions([getETHWalletAction()]))
+        
         if !isHomePage {
             section.append(PhotonRowActions([getBookmarkLibraryAction(), getBookmarkAction()]))
         } else {
@@ -682,6 +685,13 @@ class MainMenuActionHelper: PhotonActionSheetProtocol,
         }
 
         return section
+    }
+    
+    private func getETHWalletAction() -> SingleActionViewModel {
+        return SingleActionViewModel(title: "Wallet",
+                                     iconString: "ethIcon") { _ in
+            self.delegate?.showWallet()
+        }
     }
 
     private func getBookmarkLibraryAction() -> SingleActionViewModel {

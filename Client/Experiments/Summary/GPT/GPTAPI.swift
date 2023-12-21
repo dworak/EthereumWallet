@@ -11,6 +11,7 @@ enum GPTAPI {
         static let apiKey = ""
         static let organizationId = "org-8Gv3r6kesNowTuOqLxMH0tOC"
         static let model =  "gpt-3.5-turbo"
+        static let question = "Summarize this text: %@"
     }
     
     static let apiURL = "https://api.openai.com/v1/chat/completions"
@@ -31,7 +32,7 @@ extension GPTAPI {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
-        let message = Messages(role: "user", content: "Summarize this text \(text)")
+        let message = Messages(role: "user", content: Constants.question.replacingOccurrences(of: "%@", with: text))
         
         let requestData = RequestData(model: Constants.model, messages: [message])
         
@@ -67,7 +68,9 @@ extension GPTAPI {
         task.resume()
     }
     
-    static func askWithStream(_ problem: String) async throws -> AsyncThrowingStream<String, Swift.Error> {
+    static func askWithStream(_ text: String) async throws -> AsyncThrowingStream<String, Swift.Error> {
+        
+        let problem = Constants.question.replacingOccurrences(of: "%@", with: text)
         let messages: [[String: Any]] = [
             [
                 "role": "user",

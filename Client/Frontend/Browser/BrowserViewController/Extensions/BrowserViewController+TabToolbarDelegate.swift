@@ -5,6 +5,7 @@
 import Common
 import Shared
 import UIKit
+import SwiftUI
 
 extension BrowserViewController: TabToolbarDelegate, PhotonActionSheetProtocol {
     func tabToolbarDidPressHome(_ tabToolbar: TabToolbarProtocol, button: UIButton) {
@@ -209,6 +210,44 @@ extension BrowserViewController: TabToolbarDelegate, PhotonActionSheetProtocol {
 extension BrowserViewController: ToolBarActionMenuDelegate {
     func updateToolbarState() {
         updateToolbarStateForTraitCollection(view.traitCollection)
+    }
+    
+    func createWalletAlert(
+        onMnemonics: @escaping (String) -> Void,
+        onNewOne: @escaping () -> Void
+    ) -> UIAlertController {
+        
+        let alert = UIAlertController(title: "Wallet", message: "", preferredStyle: .alert)
+        alert.addTextField { textfied in
+            textfied.placeholder = "Enter mnemonics"
+        }
+        let mnemonicsAction = UIAlertAction(title: "Import", style: .default) { _ in
+            guard let mnemonics = alert.textFields?[0].text else { return }
+            onMnemonics(mnemonics)
+        }
+        let newOne = UIAlertAction(title: "Create new one", style: .default) { _ in
+            onNewOne()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(mnemonicsAction)
+        alert.addAction(newOne)
+        alert.addAction(cancelAction)
+
+        return alert
+    }
+    
+    func showWallet() {
+        let alert = createWalletAlert(
+            onMnemonics: { [weak self] value in
+                let hostingViewController = UIHostingController(rootView: WalletView(mode: .existing(value)))
+                self?.showViewController(viewController: hostingViewController)
+            },
+            onNewOne: { [weak self] in
+                let hostingViewController = UIHostingController(rootView: WalletView(mode: .new))
+                self?.showViewController(viewController: hostingViewController)
+            }
+        )
+        showViewController(viewController: alert)
     }
 
     func showViewController(viewController: UIViewController) {

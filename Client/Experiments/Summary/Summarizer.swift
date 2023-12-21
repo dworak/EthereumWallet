@@ -8,7 +8,7 @@ internal class Summarizer {
     class func summarizeWithStream(text: String, completion: @escaping (String) -> Void) {
         Task {
             do {
-                let stream = try await GPTAPI.askWithStream("Summarize this text page \(text)")
+                let stream = try await GPTAPI.askWithStream(text)
                 var all = ""
                 for try await line in stream {
                     all += line

@@ -10,6 +10,24 @@
       }
     },
     {
+      "identity" : "bigint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/attaswift/BigInt.git",
+      "state" : {
+        "revision" : "0ed110f7555c34ff468e72e1686e59721f2b0da6",
+        "version" : "5.3.0"
+      }
+    },
+    {
+      "identity" : "cryptoswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/CryptoSwift.git",
+      "state" : {
+        "revision" : "039f56c5d7960f277087a0be51f5eb04ed0ec073",
+        "version" : "1.5.1"
+      }
+    },
+    {
       "identity" : "dip",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AliSoftware/Dip.git",
@@ -52,6 +70,15 @@
       "state" : {
         "revision" : "20c2666082c372f9f2c0adf871d8cef195d011f7",
         "version" : "4.35.2"
+      }
+    },
+    {
+      "identity" : "keychainwrapper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/puretears/KeychainWrapper",
+      "state" : {
+        "revision" : "e72bc3256b2f830750f1c0080bccc3058f866f3b",
+        "version" : "1.2.1"
       }
     },
     {
@@ -124,6 +151,15 @@
       "state" : {
         "revision" : "68f2d813320c9fda2fb4aee4548c64293500200a",
         "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "web3swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/web3swift-team/web3swift.git",
+      "state" : {
+        "revision" : "74c24f4d3d5f1816616e9ebd16741ca5f7a57eb0",
+        "version" : "3.2.0"
       }
     }
   ],

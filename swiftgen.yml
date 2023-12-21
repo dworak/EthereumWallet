@@ -1,0 +1,11 @@
+xcassets:
+  inputs:
+    - Client/Assets/Images.xcassets
+  outputs:
+    - templateName: swift5
+      output: Generated/Assets.swift
+fonts:
+  inputs: Client/Assets/Fonts
+  outputs:
+    templateName: swift5
+    output: Generated/Fonts.swift
