@@ -1,7 +1,15 @@
-Firefox for iOS [![codebeat badge](https://codebeat.co/badges/67e58b6d-bc89-4f22-ba8f-7668a9c15c5a)](https://codebeat.co/projects/github-com-mozilla-firefox-ios) [![codecov](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main/graph/badge.svg)](https://codecov.io/gh/mozilla-mobile/firefox-ios/branch/main)
-===============
+Firefox for iOS with Built-in Ethereum Wallet
 
-Download on the [App Store](https://apps.apple.com/app/firefox-web-browser/id989804926).
+Explore the future of browsing with our fork of the Firefox browser, enhanced with a built-in Ethereum wallet. This innovative browser seamlessly integrates the power of Firefox's robust features with the functionality of a secure Ethereum wallet, allowing you to browse the web and manage your cryptocurrency effortlessly.
+
+## Key Features:
+- **Enhanced Security:** Benefit from the privacy and security features of Firefox, coupled with a dedicated Ethereum wallet for secure cryptocurrency transactions.
+- **User-Friendly Wallet Management:** Easily send and receive Ethereum, check your balance, and manage your wallet directly within the browser interface.
+- **Seamless Web3 Integration:** Immerse yourself in the decentralized web by effortlessly interacting with decentralized applications (DApps) and smart contracts.
+
+Experience a new era of browsing with our Firefox fork, where the worlds of web browsing and cryptocurrency seamlessly converge. Download now and embark on a journey into the decentralized future.
+
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image1.png)
 
 
 This branch (main)
