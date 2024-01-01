@@ -9,11 +9,11 @@ Explore the future of browsing with our fork of the Firefox browser, enhanced wi
 
 Experience a new era of browsing with our Firefox fork, where the worlds of web browsing and cryptocurrency seamlessly converge. Download now and embark on a journey into the decentralized future.
 
-<img src="https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image1.png" alt="Screenshot" style="width:200px;"/>
-<img src="https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image2.png" alt="Screenshot" style="width:200px;"/>
-<img src="https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image3.png" alt="Screenshot" style="width:200px;"/>
-<img src="https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image4.png" alt="Screenshot" style="width:200px;"/>
-<img src="https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image5.png" alt="Screenshot" style="width:200px;"/>
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image1.png)
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image2.png)
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image3.png)
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image4.png)
+![Screenshot](https://raw.githubusercontent.com/dworak/EthereumWallet/main/screenshots/image5.png)
 
 This branch (main)
 -----------
